@@ -4,8 +4,8 @@ export const MdiGithub = (props) => {
   return (
     <svg
       className="icon"
-      width="2rem"
-      height="2rem"
+      width="2.4rem"
+      height="2.4rem"
       viewBox="0 0 24 24"
       {...props}
     >
@@ -21,8 +21,8 @@ export const MdiTwitter = (props) => {
   return (
     <svg
       className="icon"
-      width="2rem"
-      height="2rem"
+      width="2.4rem"
+      height="2.4rem"
       viewBox="0 0 24 24"
       {...props}
     >
@@ -38,8 +38,8 @@ export const MdiLinkedin = (props) => {
   return (
     <svg
       className="icon"
-      width="2rem"
-      height="2rem"
+      width="2.4rem"
+      height="2.4rem"
       viewBox="0 0 24 24"
       {...props}
     >

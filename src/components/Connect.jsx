@@ -3,7 +3,7 @@ import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
 
 export const Connect = () => {
   return (
-    <Box display={"flex"} position={"fixed"} bottom={"1rem"} gap={2}>
+    <Box display={"flex"} position={"fixed"} bottom={"1rem"} gap={4}>
       <a href="https://github.com/B0llu" target={"_blank"}>
         <MdiGithub />
       </a>
