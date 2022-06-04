@@ -19,6 +19,8 @@ export const Header = () => {
       top={0}
       gridArea={"header"}
       bg={"white"}
+      boxShadow={"0px 10px 65px -38px rgba(0,0,0,0.75)"}
+      zIndex={"2"}
     >
       <Box display={"flex"} alignItems={"center"} gap="1rem">
         <WrapItem>
@@ -58,20 +60,23 @@ export const Header = () => {
               Home
             </GridItem>
           </Link>
-          <GridItem
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            w="100%"
-            p={2}
-            cursor="pointer"
-            fontWeight={"700"}
-            _hover={{ color: "blue.500" }}
-            transition={"0.2s ease-in-out"}
-            fontSize={"1.3rem"}
-          >
-            About
-          </GridItem>
+          <Link to={"/about"}>
+            <GridItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              w="100%"
+              p={2}
+              cursor="pointer"
+              fontWeight={"700"}
+              color={location.pathname === "/about" && "blue.500"}
+              _hover={{ color: "blue.500" }}
+              transition={"0.2s ease-in-out"}
+              fontSize={"1.3rem"}
+            >
+              About
+            </GridItem>
+          </Link>
           <GridItem
             display={"flex"}
             alignItems={"center"}

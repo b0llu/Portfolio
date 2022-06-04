@@ -36,8 +36,9 @@ export const Home = () => {
         <Box
           maxWidth={"50rem"}
           textAlign={"center"}
-          fontWeight={"400"}
+          fontWeight={"500"}
           fontSize={"1.3rem"}
+          color={"#555"}
         >
           A Frontend focused Web Developer building the Frontend of Websites and
           Web Applications that leads to the success of the overall product
