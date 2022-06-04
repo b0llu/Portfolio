@@ -9,7 +9,7 @@ export const GridLayout = ({ children }) => {
       gridTemplateRows={"1fr 1fr 1fr"}
       gridTemplateColumns={"1fr 1fr 1fr"}
       h="200px"
-      color="#111"
+      color="#272727"
       fontWeight="bold"
       fontFamily={"Montserrat"}
     >

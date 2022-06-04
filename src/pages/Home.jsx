@@ -1,18 +1,27 @@
 import { Box, Button, WrapItem } from "@chakra-ui/react";
+import { Connect } from "components";
+import { MdiGithub } from "icons/icon";
 
 export const Home = () => {
   return (
     <Box
       gridArea={"main"}
-      minHeight={"91.5vh"}
-      bgColor={"rgb(238 238 238 / 92%)"}
+      minHeight={"calc(100vh - 80px)"}
+      display={"flex"}
+      flexDirection={"column"}
+      alignItems={"center"}
+      justifyContent={"center"}
+      background={
+        "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
+      }
     >
       <Box
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
         justifyContent={"center"}
-        mt={"15%"}
+        ml={"5%"}
+        mr={"5%"}
       >
         <Box
           fontSize={"4rem"}
@@ -20,6 +29,7 @@ export const Home = () => {
           textTransform={"uppercase"}
           fontWeight={"700"}
           mb={8}
+          textAlign={"center"}
         >
           Hey, I'm Dhruv Samant
         </Box>
@@ -35,7 +45,7 @@ export const Home = () => {
         <WrapItem mt={14}>
           <Button
             p={5}
-            colorScheme="blue"
+            colorScheme={"blue"}
             fontWeight={"500"}
             fontSize={"1.2rem"}
           >
@@ -43,6 +53,7 @@ export const Home = () => {
           </Button>
         </WrapItem>
       </Box>
+      <Connect />
     </Box>
   );
 };
