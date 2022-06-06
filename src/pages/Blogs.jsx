@@ -53,7 +53,7 @@ export const Blogs = () => {
       background={
         "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
       }
-      mt={"80px"}
+      mt={loading ? "0" : '80px'}
       h={loading ?? '100vh'}
     >
       <Box
