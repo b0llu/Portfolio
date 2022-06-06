@@ -1,6 +1,6 @@
 import { GridLayout, Header } from "./components";
 import { Routes, Route } from "react-router-dom";
-import { About, Home, Projects } from "./pages";
+import { About, Blogs, Home, Projects } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/blogs" element={<Blogs />} />
         </Routes>
       </GridLayout>
     </>

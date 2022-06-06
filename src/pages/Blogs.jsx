@@ -1,9 +1,42 @@
 import { Box, Image, Link } from "@chakra-ui/react";
-import { Connect, Divider } from "components";
-import { projects } from "data/data";
+import { Divider } from "components";
 import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
+import { useEffect, useState } from "react";
 
-export const Projects = () => {
+const query = `
+{
+  user(username:"b0llu") {
+    publication {
+      posts {
+        title
+        brief
+        slug
+        cuid
+        coverImage
+      }
+    }
+  }
+}`;
+
+export const Blogs = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("https://api.hashnode.com", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query: query }),
+      });
+      const data = await response.json();
+      if (data) {
+        setBlogs(data.data?.user?.publication?.posts);
+      }
+    })();
+  }, []);
+
   return (
     <Box
       gridArea={"main"}
@@ -24,7 +57,7 @@ export const Projects = () => {
         mt={"3rem"}
       >
         <Box textAlign={"center"} fontSize={"2.6rem"} mb={2} fontWeight={"800"}>
-          Projects
+          Blogs
         </Box>
         <Divider />
         <Box
@@ -34,25 +67,25 @@ export const Projects = () => {
           maxWidth={"60rem"}
           fontWeight={"500"}
         >
-          Here you will find some of the personal projects that I created
+          Here you will find some of the Blogs that I have written
         </Box>
       </Box>
-      <Box m={'1rem'}>
-        {projects.map((project) => {
+      <Box m={"1rem"}>
+        {blogs.map((blog) => {
           return (
             <Box
-              key={project.id}
+              key={blog.cuid}
               display={"flex"}
               alignItems={"flex-start"}
               justifyContent={"center"}
               gap={"5rem"}
               h={"25rem"}
             >
-              <Box h={"20rem"} w={"35rem"} p={"2rem 0 0 0"}>
+              <Box h={"25rem"} w={"25rem"} p={"2rem 0 0 0"}>
                 <Image
                   borderRadius={"5px"}
-                  src={project.image}
-                  alt="Project Image"
+                  src={blog.coverImage}
+                  alt={blog.slug}
                 />
               </Box>
               <Box
@@ -65,14 +98,14 @@ export const Projects = () => {
                 gap={"1rem"}
                 h={"20rem"}
               >
-                <Box fontSize={"2rem"}>{project.name}</Box>
+                <Box fontSize={"2rem"}>{blog.title}</Box>
                 <Box fontWeight={"500"} color={"#555"}>
-                  {project.description}
+                  {blog.brief}
                 </Box>
                 <Box w={"100%"} mt={"1rem"}>
                   <Link
                     target={"_blank"}
-                    href={project.live}
+                    href={`https://dhruvsamant.hashnode.dev/${blog.slug}`}
                     _hover={{
                       textDecoration: "none",
                       backgroundColor: "blue.500",
@@ -85,25 +118,7 @@ export const Projects = () => {
                     borderRadius={"5px"}
                     fontWeight={"500"}
                   >
-                    Live Demo
-                  </Link>
-                  <Link
-                    target={"_blank"}
-                    href={project.github}
-                    _hover={{
-                      textDecoration: "none",
-                      backgroundColor: "blue.500",
-                      color: "#fff",
-                      transition: "0.2s ease-in-out",
-                    }}
-                    border={"1px solid"}
-                    borderColor={"blue.500"}
-                    p={"8px 2rem"}
-                    borderRadius={"5px"}
-                    fontWeight={"500"}
-                    ml={"2rem"}
-                  >
-                    Github
+                    Check it out
                   </Link>
                 </Box>
               </Box>
@@ -111,7 +126,7 @@ export const Projects = () => {
           );
         })}
       </Box>
-      <Box display={"flex"} mb={'1rem'} gap={4}>
+      <Box display={"flex"} mb={"1rem"} gap={4}>
         <a href="https://github.com/B0llu" target={"_blank"}>
           <MdiGithub />
         </a>

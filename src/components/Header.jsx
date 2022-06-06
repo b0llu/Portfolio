@@ -94,20 +94,23 @@ export const Header = () => {
               Projects
             </GridItem>
           </Link>
-          <GridItem
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            w="100%"
-            p={2}
-            cursor="pointer"
-            fontWeight={"700"}
-            _hover={{ color: "blue.500" }}
-            transition={"0.2s ease-in-out"}
-            fontSize={"1.3rem"}
-          >
-            Blogs
-          </GridItem>
+          <Link to={"/blogs"}>
+            <GridItem
+              display={"flex"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              w="100%"
+              p={2}
+              cursor="pointer"
+              fontWeight={"700"}
+              color={location.pathname === "/blogs" && "blue.500"}
+              _hover={{ color: "blue.500" }}
+              transition={"0.2s ease-in-out"}
+              fontSize={"1.3rem"}
+            >
+              Blogs
+            </GridItem>
+          </Link>
         </Grid>
       </Box>
     </Box>
