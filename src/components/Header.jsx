@@ -28,7 +28,7 @@ export const Header = () => {
             height={"3rem"}
             width={"3rem"}
             name="Ryan Florence"
-            src="https://pbs.twimg.com/profile_images/1464407388228780036/NFY5UUPn_400x400.jpg"
+            src="https://res.cloudinary.com/dtzklid8v/image/upload/v1654504647/Screenshot_2022-05-31_082954_jpyd1u.jpg"
           />{" "}
         </WrapItem>
         <Box
