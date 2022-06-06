@@ -14,7 +14,7 @@ export const Header = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      position={"sticky"}
+      position={"fixed"}
       width={"100%"}
       top={0}
       gridArea={"header"}

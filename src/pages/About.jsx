@@ -14,8 +14,9 @@ export const About = () => {
       background={
         "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
       }
+      mt={"80px"}
     >
-      <Box display={'flex'} flexDirection={'column'} alignItems={'center'} >
+      <Box display={"flex"} flexDirection={"column"} alignItems={"center"}>
         <Box textAlign={"center"} fontSize={"2.6rem"} mb={2} fontWeight={"800"}>
           About Me
         </Box>
@@ -71,6 +72,7 @@ export const About = () => {
             {skills.map((skill) => {
               return (
                 <Box
+                  key={skill}
                   bgColor={"#99999933"}
                   pt={2.5}
                   pb={2.5}

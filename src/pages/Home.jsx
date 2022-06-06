@@ -1,8 +1,10 @@
 import { Box, Button, WrapItem } from "@chakra-ui/react";
 import { Connect } from "components";
-import { MdiGithub } from "icons/icon";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <Box
       gridArea={"main"}
@@ -14,6 +16,7 @@ export const Home = () => {
       background={
         "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
       }
+      mt={"80px"}
     >
       <Box
         display={"flex"}
@@ -49,6 +52,7 @@ export const Home = () => {
             colorScheme={"blue"}
             fontWeight={"500"}
             fontSize={"1.2rem"}
+            onClick={() => navigate("/projects")}
           >
             Projects
           </Button>

@@ -7,3 +7,12 @@
   color: #3182ce;
   transition: 0.2s ease-in-out;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3182ce;
+  border-radius: 10px;
+}
