@@ -1,9 +1,11 @@
 import { Box, Button, WrapItem } from "@chakra-ui/react";
 import { Connect } from "components";
+import { useDocTitle } from "hook/useTitle";
 import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   const navigate = useNavigate();
+  useDocTitle("Dhruv Samant | Home");
 
   return (
     <Box

@@ -1,9 +1,12 @@
 import { Box, Image, Link } from "@chakra-ui/react";
 import { Connect, Divider } from "components";
 import { projects } from "data/data";
+import { useDocTitle } from "hook/useTitle";
 import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
 
 export const Projects = () => {
+  useDocTitle("Dhruv Samant | Projects");
+
   return (
     <Box
       gridArea={"main"}

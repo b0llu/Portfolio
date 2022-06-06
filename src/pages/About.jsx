@@ -1,8 +1,11 @@
 import { Box } from "@chakra-ui/react";
 import { Connect, Divider } from "components";
 import { skills } from "data/data";
+import { useDocTitle } from "hook/useTitle";
 
 export const About = () => {
+  useDocTitle("Dhruv Samant | About");
+
   return (
     <Box
       display={"flex"}

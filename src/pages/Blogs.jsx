@@ -1,5 +1,6 @@
 import { Box, Image, Link } from "@chakra-ui/react";
 import { Divider } from "components";
+import { useDocTitle } from "hook/useTitle";
 import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
 import { useEffect, useState } from "react";
 
@@ -20,6 +21,9 @@ const query = `
 
 export const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(false)
+
+  useDocTitle("Dhruv Samant | Blogs");
 
   useEffect(() => {
     (async () => {
@@ -30,9 +34,11 @@ export const Blogs = () => {
         },
         body: JSON.stringify({ query: query }),
       });
+      setLoading(true)
       const data = await response.json();
       if (data) {
         setBlogs(data.data?.user?.publication?.posts);
+        setLoading(false)
       }
     })();
   }, []);
@@ -48,6 +54,7 @@ export const Blogs = () => {
         "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
       }
       mt={"80px"}
+      h={loading ?? '100vh'}
     >
       <Box
         display={"flex"}
