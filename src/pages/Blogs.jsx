@@ -1,4 +1,4 @@
-import { Box, Image, Link } from "@chakra-ui/react";
+import { Box, Image, Link, useMediaQuery } from "@chakra-ui/react";
 import { Divider } from "components";
 import { useDocTitle } from "hook/useTitle";
 import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
@@ -20,6 +20,7 @@ const query = `
 }`;
 
 export const Blogs = () => {
+  const [isLessThan1000] = useMediaQuery("(max-width: 1000px)");
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(false)
 
@@ -53,23 +54,28 @@ export const Blogs = () => {
       background={
         "linear-gradient(to right,rgba(245,245,245,.8),rgba(245,245,245,.8)),url(https://d33wubrfki0l68.cloudfront.net/daac8858fd4a0ccea44f59dfd079c3c16c263f33/c157c/assets/svg/common-bg.svg)"
       }
-      mt={loading ? "0" : '80px'}
-      h={loading ?? '100vh'}
+      mt={loading ? "0" : "80px"}
+      h={loading ?? "100vh"}
     >
       <Box
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
-        mb={"5rem"}
+        mb={isLessThan1000 ? "2rem" : "3rem"}
         mt={"3rem"}
       >
-        <Box textAlign={"center"} fontSize={"2.6rem"} mb={2} fontWeight={"800"}>
+        <Box
+          textAlign={"center"}
+          fontSize={isLessThan1000 ? "2rem" : "2.6rem"}
+          mb={2}
+          fontWeight={"800"}
+        >
           Blogs
         </Box>
         <Divider />
         <Box
           textAlign={"center"}
-          fontSize={"1.3rem"}
+          fontSize={isLessThan1000 ? "1rem" : "1.3rem"}
           color={"#555"}
           maxWidth={"60rem"}
           fontWeight={"500"}
@@ -83,12 +89,20 @@ export const Blogs = () => {
             <Box
               key={blog.cuid}
               display={"flex"}
-              alignItems={"flex-start"}
+              flexDirection={isLessThan1000 && "column"}
+              alignItems={isLessThan1000 ? "center" : "flex-start"}
               justifyContent={"center"}
-              gap={"5rem"}
-              h={"25rem"}
+              gap={isLessThan1000 ? "0" : "5rem"}
+              h={isLessThan1000 ? "max-content" : "25rem"}
+              mb={isLessThan1000 && "3rem"}
             >
-              <Box h={"25rem"} w={"25rem"} p={"2rem 0 0 0"}>
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                h={isLessThan1000 ? "10rem" : "25rem"}
+                w={isLessThan1000 ? "20rem" : "25rem"}
+              >
                 <Image
                   borderRadius={"5px"}
                   src={blog.coverImage}
@@ -96,20 +110,39 @@ export const Blogs = () => {
                 />
               </Box>
               <Box
-                p={"2rem 0"}
+                p={isLessThan1000 ? "1rem 0" : "2rem 0"}
                 display={"flex"}
                 flexDirection={"column"}
                 justifyContent={"center"}
-                alignItems={"flex-start"}
+                alignItems={"center"}
                 maxWidth={"30rem"}
-                gap={"1rem"}
-                h={"20rem"}
+                gap={isLessThan1000 ? "8px" : "1rem"}
+                h={"100%"}
+                mt={isLessThan1000 && "1rem"}
               >
-                <Box fontSize={"2rem"}>{blog.title}</Box>
-                <Box fontWeight={"500"} color={"#555"}>
+                <Box
+                  w={"100%"}
+                  fontSize={isLessThan1000 ? "1.6rem" : "2rem"}
+                  textAlign={isLessThan1000 && "center"}
+                >
+                  {blog.title}
+                </Box>
+                <Box
+                  fontWeight={"500"}
+                  color={"#555"}
+                  textAlign={isLessThan1000 && "center"}
+                  m={isLessThan1000 && "0 1rem"}
+                  fontSize={isLessThan1000 ? "1rem" : ""}
+                >
                   {blog.brief}
                 </Box>
-                <Box w={"100%"} mt={"1rem"}>
+                <Box
+                  w={"100%"}
+                  mt={"1rem"}
+                  display={isLessThan1000 && "flex"}
+                  alignItems={isLessThan1000 && "center"}
+                  justifyContent={isLessThan1000 && "center"}
+                >
                   <Link
                     target={"_blank"}
                     href={`https://dhruvsamant.hashnode.dev/${blog.slug}`}
@@ -121,7 +154,7 @@ export const Blogs = () => {
                     }}
                     border={"1px solid"}
                     borderColor={"blue.500"}
-                    p={"8px 2rem"}
+                    p={isLessThan1000 ? "4px 8px" : "8px 2rem"}
                     borderRadius={"5px"}
                     fontWeight={"500"}
                   >

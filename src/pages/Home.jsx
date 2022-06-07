@@ -1,4 +1,4 @@
-import { Box, Button, WrapItem } from "@chakra-ui/react";
+import { Box, Button, useMediaQuery, WrapItem } from "@chakra-ui/react";
 import { Connect } from "components";
 import { useDocTitle } from "hook/useTitle";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Home = () => {
   const navigate = useNavigate();
   useDocTitle("Dhruv Samant | Home");
+  const [isLessThan600] = useMediaQuery("(max-width: 600px)");
 
   return (
     <Box
@@ -29,7 +30,7 @@ export const Home = () => {
         mr={"5%"}
       >
         <Box
-          fontSize={"4rem"}
+          fontSize={isLessThan600 ? "2rem" : "4rem"}
           letterSpacing={"3px"}
           textTransform={"uppercase"}
           fontWeight={"700"}
@@ -42,18 +43,21 @@ export const Home = () => {
           maxWidth={"50rem"}
           textAlign={"center"}
           fontWeight={"500"}
-          fontSize={"1.3rem"}
+          fontSize={isLessThan600 ? "1rem" : "1.3rem"}
           color={"#555"}
         >
           A Frontend focused Web Developer building the Frontend of Websites and
           Web Applications that leads to the success of the overall product
         </Box>
-        <WrapItem mt={14}>
+        <WrapItem mt={isLessThan600 ? 10 : 14}>
           <Button
-            p={5}
+            pt={isLessThan600 ? "8px" : 5}
+            pb={isLessThan600 ? "8px" : 5}
+            pl={isLessThan600 ? "1rem" : 5}
+            pr={isLessThan600 ? "1rem" : 5}
             colorScheme={"blue"}
             fontWeight={"500"}
-            fontSize={"1.2rem"}
+            fontSize={isLessThan600 ? "1rem" : "1.2rem"}
             onClick={() => navigate("/projects")}
           >
             Projects

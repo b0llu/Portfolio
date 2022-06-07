@@ -1,11 +1,12 @@
-import { Box, Image, Link } from "@chakra-ui/react";
-import { Connect, Divider } from "components";
+import { Box, Image, Link, useMediaQuery } from "@chakra-ui/react";
+import { Divider } from "components";
 import { projects } from "data/data";
 import { useDocTitle } from "hook/useTitle";
 import { MdiGithub, MdiLinkedin, MdiTwitter } from "icons/icon";
 
 export const Projects = () => {
   useDocTitle("Dhruv Samant | Projects");
+  const [isLessThan1000] = useMediaQuery("(max-width: 1000px)");
 
   return (
     <Box
@@ -23,16 +24,21 @@ export const Projects = () => {
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
-        mb={"5rem"}
+        mb={isLessThan1000 ? "2rem" : "5rem"}
         mt={"3rem"}
       >
-        <Box textAlign={"center"} fontSize={"2.6rem"} mb={2} fontWeight={"800"}>
+        <Box
+          textAlign={"center"}
+          fontSize={isLessThan1000 ? "2rem" : "2.6rem"}
+          mb={2}
+          fontWeight={"800"}
+        >
           Projects
         </Box>
         <Divider />
         <Box
           textAlign={"center"}
-          fontSize={"1.3rem"}
+          fontSize={isLessThan1000 ? '1rem' : "1.3rem"}
           color={"#555"}
           maxWidth={"60rem"}
           fontWeight={"500"}
@@ -40,18 +46,27 @@ export const Projects = () => {
           Here you will find some of the personal projects that I created
         </Box>
       </Box>
-      <Box m={'1rem'}>
+      <Box m={"1rem"}>
         {projects.map((project) => {
           return (
             <Box
               key={project.id}
               display={"flex"}
-              alignItems={"flex-start"}
+              flexDirection={isLessThan1000 && "column"}
+              alignItems={isLessThan1000 ? "center" : "flex-start"}
               justifyContent={"center"}
-              gap={"5rem"}
-              h={"25rem"}
+              gap={isLessThan1000 ? "0" : "5rem"}
+              h={isLessThan1000 ? "max-content" : "25rem"}
+              mb={isLessThan1000 && "3rem"}
             >
-              <Box h={"20rem"} w={"35rem"} p={"2rem 0 0 0"}>
+              <Box
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                h={isLessThan1000 ? "10rem" : "20rem"}
+                w={isLessThan1000 ? "20rem" : "35rem"}
+                p={"2rem 0 0 0"}
+              >
                 <Image
                   borderRadius={"5px"}
                   src={project.image}
@@ -59,20 +74,39 @@ export const Projects = () => {
                 />
               </Box>
               <Box
-                p={"2rem 0"}
+                p={isLessThan1000 ? "1rem 0" : "2rem 0"}
                 display={"flex"}
                 flexDirection={"column"}
                 justifyContent={"center"}
                 alignItems={"flex-start"}
                 maxWidth={"30rem"}
-                gap={"1rem"}
-                h={"20rem"}
+                gap={isLessThan1000 ? "8px" : "1rem"}
+                h={isLessThan1000 ? "15rem" : "20rem"}
+                mt={isLessThan1000 && "1rem"}
               >
-                <Box fontSize={"2rem"}>{project.name}</Box>
-                <Box fontWeight={"500"} color={"#555"}>
+                <Box
+                  w={"100%"}
+                  fontSize={isLessThan1000 ? "1.6rem" : "2rem"}
+                  textAlign={isLessThan1000 && "center"}
+                >
+                  {project.name}
+                </Box>
+                <Box
+                  fontWeight={"500"}
+                  color={"#555"}
+                  textAlign={isLessThan1000 && "center"}
+                  m={isLessThan1000 && "0 1rem"}
+                  fontSize={isLessThan1000 ? "1rem" : ""}
+                >
                   {project.description}
                 </Box>
-                <Box w={"100%"} mt={"1rem"}>
+                <Box
+                  w={"100%"}
+                  mt={"1rem"}
+                  display={isLessThan1000 && "flex"}
+                  alignItems={isLessThan1000 && "center"}
+                  justifyContent={isLessThan1000 && "center"}
+                >
                   <Link
                     target={"_blank"}
                     href={project.live}
@@ -84,7 +118,7 @@ export const Projects = () => {
                     }}
                     border={"1px solid"}
                     borderColor={"blue.500"}
-                    p={"8px 2rem"}
+                    p={isLessThan1000 ? "4px 8px" : "8px 2rem"}
                     borderRadius={"5px"}
                     fontWeight={"500"}
                   >
@@ -101,7 +135,7 @@ export const Projects = () => {
                     }}
                     border={"1px solid"}
                     borderColor={"blue.500"}
-                    p={"8px 2rem"}
+                    p={isLessThan1000 ? "4px 8px" : "8px 2rem"}
                     borderRadius={"5px"}
                     fontWeight={"500"}
                     ml={"2rem"}
@@ -114,7 +148,7 @@ export const Projects = () => {
           );
         })}
       </Box>
-      <Box display={"flex"} mb={'1rem'} gap={4}>
+      <Box display={"flex"} mb={"1rem"} gap={4}>
         <a href="https://github.com/B0llu" target={"_blank"}>
           <MdiGithub />
         </a>
