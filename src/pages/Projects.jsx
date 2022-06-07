@@ -24,12 +24,12 @@ export const Projects = () => {
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
-        mb={isLessThan1000 ? "2rem" : "5rem"}
-        mt={"3rem"}
+        mb={isLessThan1000 ? "0" : "5rem"}
+        mt={isLessThan1000 ? 6 : 3}
       >
         <Box
           textAlign={"center"}
-          fontSize={isLessThan1000 ? "2rem" : "2.6rem"}
+          fontSize={isLessThan1000 ? "1.8rem" : "2.6rem"}
           mb={2}
           fontWeight={"800"}
         >

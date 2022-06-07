@@ -62,11 +62,11 @@ export const Blogs = () => {
         flexDirection={"column"}
         alignItems={"center"}
         mb={isLessThan1000 ? "2rem" : "3rem"}
-        mt={"3rem"}
+        mt={isLessThan1000 ? 6 : 3}
       >
         <Box
           textAlign={"center"}
-          fontSize={isLessThan1000 ? "2rem" : "2.6rem"}
+          fontSize={isLessThan1000 ? "1.8rem" : "2.6rem"}
           mb={2}
           fontWeight={"800"}
         >
