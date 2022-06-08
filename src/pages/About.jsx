@@ -130,7 +130,7 @@ export const About = () => {
                   letterSpacing={"1px"}
                   _hover={{ color: "blue.500" }}
                   transition={"0.2s ease-in-out"}
-                  fontSize={isLessThan800 && "8px"}
+                  fontSize={isLessThan800 && "1rem"}
                 >
                   {skill}
                 </Box>

@@ -6,7 +6,7 @@ export const skills = [
   "Redux",
   "Express Basics",
   "TDD",
-  "Node.js"
+  "Node Basics"
 ];
 
 export const projects = [
