@@ -28,7 +28,7 @@ export const projects = [
     image:
       "https://res.cloudinary.com/dtzklid8v/image/upload/v1654494261/stormpoint_kgc2hb.jpg",
     github: "https://github.com/b0llu/Stormpoint-Ecom/tree/developer",
-    live: "https://stormpoint-shop.netlify.app/",
+    live: "https://stormpoint.netlify.app/",
   },
   {
     id: 3,
