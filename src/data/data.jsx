@@ -2,11 +2,13 @@ export const skills = [
   "JavaScript",
   "React",
   "HTML",
+  "Context API",
   "CSS",
   "Redux",
+  "Node Basics",
   "Express Basics",
   "TDD",
-  "Node Basics"
+  "TypeScript",
 ];
 
 export const projects = [
