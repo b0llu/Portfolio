@@ -1,12 +1,11 @@
 export const skills = [
   "JavaScript",
-  "React",
+  "React JS",
   "HTML",
-  "Context API",
   "CSS",
-  "Redux",
-  "Node Basics",
-  "Express Basics",
+  "Context API",
+  "Redux Toolkit",
+  "Node/Express Basics",
   "TDD",
   "TypeScript",
 ];
@@ -14,16 +13,6 @@ export const skills = [
 export const projects = [
   {
     id: 1,
-    name: "Storm UI",
-    description:
-      "Welcome to Storm-UI! This is a component library build to make creation of any project Possible and Simple.",
-    image:
-      "https://res.cloudinary.com/dtzklid8v/image/upload/v1654497491/stormui_teaoxm.jpg",
-    github: "https://github.com/b0llu/Storm-UI/tree/developer",
-    live: "https://storm-ui.netlify.app/",
-  },
-  {
-    id: 2,
     name: "StormPoint",
     description:
       "Welcome to Stormpoint! This is the best stop for a Gamer. Buy any Gaming related components for your PC!",
@@ -31,6 +20,16 @@ export const projects = [
       "https://res.cloudinary.com/dtzklid8v/image/upload/v1654494261/stormpoint_kgc2hb.jpg",
     github: "https://github.com/b0llu/Stormpoint-Ecom/tree/developer",
     live: "https://stormpoint.netlify.app/",
+  },
+  {
+    id: 2,
+    name: "StormMedia",
+    description:
+      "Welcome to StormMedia! A Social Media App for Gamers. Come hang out see what other people are talking about and share you thoughts also.",
+    image:
+      "https://res.cloudinary.com/dtzklid8v/image/upload/v1654495646/stormmedia_f9l4rc.jpg",
+    github: "https://github.com/b0llu/StormMedia/tree/developer",
+    live: "https://stormmedia.netlify.app/",
   },
   {
     id: 3,
@@ -54,12 +53,22 @@ export const projects = [
   },
   {
     id: 5,
-    name: "StormMedia",
+    name: "StormQuiz",
     description:
-      "Welcome to StormMedia! A Social Media App for Gamers. Come hang out see what other people are talking about and share you thoughts also.",
+      "Welcome to StormQuiz! A Quiz app consisting quizzes related to Games. Do check it out.",
     image:
-      "https://res.cloudinary.com/dtzklid8v/image/upload/v1654495646/stormmedia_f9l4rc.jpg",
-    github: "https://github.com/b0llu/StormMedia/tree/developer",
-    live: "https://stormmedia.netlify.app/",
+      "https://res.cloudinary.com/dtzklid8v/image/upload/v1655977130/quiz_oolssg.jpg",
+    github: "https://github.com/b0llu/StormQuiz",
+    live: "https://stormquiz.netlify.app/",
+  },
+  {
+    id: 6,
+    name: "Storm UI",
+    description:
+      "Welcome to Storm-UI! This is a component library build to make creation of any project Possible and Simple.",
+    image:
+      "https://res.cloudinary.com/dtzklid8v/image/upload/v1654497491/stormui_teaoxm.jpg",
+    github: "https://github.com/b0llu/Storm-UI/tree/developer",
+    live: "https://storm-ui.netlify.app/",
   },
 ];
