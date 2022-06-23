@@ -6,12 +6,13 @@ import {
   useMediaQuery,
   WrapItem,
 } from "@chakra-ui/react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { SideDrawer } from "./SideDrawer";
 
 export const Header = () => {
   const location = useLocation();
   const [isLessThan850] = useMediaQuery("(max-width: 850px)");
+  const navigate = useNavigate();
 
   return (
     <Box
@@ -46,6 +47,7 @@ export const Header = () => {
           _hover={{ color: "blue.500" }}
           transition={"0.2s ease-in-out"}
           fontSize={"1.3rem"}
+          onClick={() => navigate("/")}
         >
           Dhruv Samant
         </Box>
