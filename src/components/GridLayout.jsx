@@ -11,7 +11,7 @@ export const GridLayout = ({ children }) => {
       h="200px"
       color="#272727"
       fontWeight="bold"
-      fontFamily={"Montserrat"}
+      fontFamily={"Open Sans"}
     >
       {children}
     </Grid>

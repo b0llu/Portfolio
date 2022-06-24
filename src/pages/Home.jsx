@@ -1,4 +1,4 @@
-import { Box, Button, useMediaQuery, WrapItem } from "@chakra-ui/react";
+import { Box, Button, Image, useMediaQuery, WrapItem } from "@chakra-ui/react";
 import { Connect } from "components";
 import { useDocTitle } from "hook/useTitle";
 import { useNavigate } from "react-router-dom";
@@ -21,6 +21,13 @@ export const Home = () => {
       }
       mt={"80px"}
     >
+      <Image
+        borderRadius="full"
+        boxSize={isLessThan600 ? "12rem" : "15rem"}
+        src="https://res.cloudinary.com/dtzklid8v/image/upload/v1654504647/Screenshot_2022-05-31_082954_jpyd1u.jpg"
+        alt="Profile Photo"
+        mb={5}
+      />
       <Box
         display={"flex"}
         flexDirection={"column"}
@@ -28,6 +35,7 @@ export const Home = () => {
         justifyContent={"center"}
         ml={"5%"}
         mr={"5%"}
+        mb={"6rem"}
       >
         <Box
           fontSize={isLessThan600 ? "2rem" : "4rem"}
@@ -45,11 +53,12 @@ export const Home = () => {
           fontWeight={"500"}
           fontSize={isLessThan600 ? "1rem" : "1.3rem"}
           color={"#555"}
+          mb={8}
         >
           A Frontend focused Web Developer building the Frontend of Websites and
           Web Applications that leads to the success of the overall product
         </Box>
-        <WrapItem mt={isLessThan600 ? 10 : 14}>
+        <WrapItem>
           <Button
             pt={isLessThan600 ? "8px" : 5}
             pb={isLessThan600 ? "8px" : 5}
